@@ -1,0 +1,65 @@
+Session created for user: admin
+Role ID: 3
+Role Name: Admin
+2025-04-02 12:59:15
+
+Session created for user: Trung
+Role ID: 1
+Role Name: User
+2025-04-02 13:10:29
+
+Session created for user: admin
+Role ID: 3
+Role Name: Admin
+2025-04-02 13:10:46
+
+Session created for user: admin
+Role ID: 3
+Role Name: Admin
+2025-04-02 14:58:09
+
+Session created for user: admin
+Role ID: 3
+Role Name: Admin
+2025-04-02 15:02:38
+
+Session created for user: jungkior1
+Role ID: 1
+Role Name: User
+2025-04-02 16:39:19
+
+Session created for user: admin
+Role ID: 3
+Role Name: Admin
+2025-04-02 16:40:59
+
+Session created for user: nguyenminhchau
+Role ID: 1
+Role Name: User
+2025-04-02 17:03:20
+
+Session created for user: nguyenminhchau
+Role ID: 1
+Role Name: User
+2025-04-02 17:04:20
+
+Session created for user: admin
+Role ID: 3
+Role Name: Admin
+2025-04-02 17:08:23
+
+Session created for user: nguyenminhchau
+Role ID: 1
+Role Name: User
+2025-04-02 17:16:56
+
+Session created for user: admin
+Role ID: 3
+Role Name: Admin
+2025-04-02 17:17:31
+
+Session created for user: admin
+Role ID: 3
+Role Name: Admin
+2025-04-02 17:27:12
+
