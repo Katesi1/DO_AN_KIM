@@ -17,7 +17,7 @@
                 </ol>
             </nav>
         </div>
-        <?php if(isset($_SESSION['user_id']) && $_SESSION['user_id'] == $data['item']->user_id): ?>
+        <?php if(isset($_SESSION['user_id']) && $_SESSION['user_id'] == $data['item']->user_id)): ?>
         <div class="col-md-4 text-end">
             <a href="<?php echo URLROOT; ?>/items/edit/<?php echo $data['item']->id; ?>" class="btn btn-sm btn-outline-primary">
                 <i class="fas fa-edit me-1"></i> Sửa
@@ -117,7 +117,12 @@
                 <div class="card-body py-4">
                     <div class="mb-4">
                         <h5 class="fw-bold text-dark">Mô tả</h5>
-                        <p class="text-secondary"><?php echo nl2br(htmlspecialchars($data['item']->description)); ?></p>
+                        <?php if(isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin' || 
+                                (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $data['item']->user_id)): ?>
+                            <p class="text-secondary"><?php echo nl2br(htmlspecialchars($data['item']->description)); ?></p>
+                        <?php else: ?>
+                            <p class="text-muted"><i class="fas fa-lock me-2"></i>Mô tả chi tiết được ẩn để bảo vệ thông tin. Chỉ người đăng và quản trị viên mới có thể xem.</p>
+                        <?php endif; ?>
                     </div>
                     
                     <div class="row mb-4">
@@ -190,7 +195,7 @@
                     
                     <hr>
                     
-                    <?php if(isset($_SESSION['user_id']) && $_SESSION['user_id'] != $data['item']->user_id): ?>
+                    <?php if(isset($_SESSION['user_id']) && $_SESSION['user_id'] != $data['item']->user_id)): ?>
                         <?php if($data['item']->status == 'active'): ?>
                             <?php if(!$data['hasClaim']): ?>
                                 <div class="d-grid">
@@ -245,7 +250,7 @@
                 </div>
             </div>
             
-            <?php if(!empty($data['item']->private_info) && isset($_SESSION['user_id']) && $_SESSION['user_id'] == $data['item']->user_id): ?>
+            <?php if(!empty($data['item']->private_info) && isset($_SESSION['user_id']) && $_SESSION['user_id'] == $data['item']->user_id)): ?>
                 <div class="card border-0 shadow-sm mb-4">
                     <div class="card-header bg-warning bg-opacity-10 py-3 border-0">
                         <h5 class="mb-0 fw-bold text-warning"><i class="fas fa-lock me-2"></i> Thông tin riêng tư</h5>
@@ -378,7 +383,7 @@
 </div>
 
 <!-- Delete Confirmation Modal -->
-<?php if(isset($_SESSION['user_id']) && $_SESSION['user_id'] == $data['item']->user_id): ?>
+<?php if(isset($_SESSION['user_id']) && $_SESSION['user_id'] == $data['item']->user_id)): ?>
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content border-0 shadow">

@@ -17,8 +17,12 @@
                 <div class="card-body">
                     <div class="alert alert-info mb-4">
                         <h5><i class="fas fa-info-circle"></i> Thông tin đồ vật:</h5>
-                        <p class="mb-1"><strong>Tiêu đề:</strong> <?= $data['item']->title ?></p>
-                        <p class="mb-0"><strong>Mô tả:</strong> <?= nl2br(htmlspecialchars(substr($data['item']->description, 0, 200))) ?>...</p>
+                        <p class="mb-0"><strong>Tiêu đề:</strong> <?= $data['item']->title ?></p>
+                    </div>
+
+                    <div class="alert alert-warning mb-4">
+                        <h5><i class="fas fa-exclamation-triangle"></i> Quy trình xác minh:</h5>
+                        <p class="mb-0">Thông tin bạn cung cấp sẽ được đối chiếu với mô tả chi tiết của người đăng. Quản trị viên sẽ xem xét và xác nhận nếu thông tin trùng khớp.</p>
                     </div>
 
                     <form action="<?= URLROOT ?>/items/claim/<?= $data['item']->id ?>" method="POST">
